@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,30 +11,35 @@
 
     <!-- styleSheets -->
     <link rel="stylesheet" href="{{ asset('css/admin/utilities.css') }}">
-        {{ $style }}
+    {{ $style }}
 
     <link rel="shortcut icon" href="{{ asset('img/b.png') }}" />
-    <title>Beyond</title>
+    <title>Jill</title>
 
     <!-- scripts -->
-    <script src="{{ asset('js/admin/utilities.js') }}" defer></script>        
+    <script src="{{ asset('js/admin/utilities.js') }}" defer></script>
     {{ $js ?? '' }}
-    
-    {{ $chart ?? '' }}    
-    
+
+    {{ $chart ?? '' }}
+
     <style>
-        a[href = "{{ url()->current() }}"]{
-            color: var(--text-blue);
-        }
+    a[href="{{ url()->current() }}"] {
+        color: var(--text-blue);
+    }
+
+    .dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+    }
     </style>
 </head>
+
 <body class="m-0">
     <div class="cover"></div>
-
-
     <nav>
         <span class="ham material-icons">menu</span>
         <a id="nav_logo" class="d-b" href="#"><img class="fit_img" src="{{ asset('img/b.png') }}" alt="logo"></a>
+        <!--<button id="theme-toggle">Toggle Dark Mode</button> -->
         <div class="nav_admin">
             <img class="fit_img admin_img" src="{{ asset('storage/avatar/admin.jpg'); }}" alt="admin_img">
         </div>
@@ -127,4 +133,28 @@
         {{-- main contents --}}
     </main>
 </body>
+
 </html>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    console.log("Current theme:", currentTheme);
+
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        console.log("Dark mode applied on load.");
+    }
+
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        let theme = 'light';
+        if (document.body.classList.contains('dark-mode')) {
+            theme = 'dark';
+        }
+        console.log("Theme changed to:", theme);
+        localStorage.setItem('theme', theme);
+    });
+});
+</script>

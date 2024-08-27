@@ -3,5 +3,5 @@
         <img src="{{ asset('storage/'.$product->image) }}" alt="{{ ucfirst($product->title) }}">
     </div>
     <h3>{{ ucfirst($product->title) }}</h3>
-    <p>{{ "$".$product->price }}</p>
+    <p>{{ "Ksh.".$product->price }}</p>
 </a>

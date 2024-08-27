@@ -4,6 +4,23 @@
     --head_col: #333333;
     --site_col_1: #3da8f3;
     --site_text_1: #b3b3b3;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --card-background: #f9f9f9;
+}
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --card-background: #1e1e1e;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.card {
+    background-color: var(--card-background);
 }
 
 /* ============start

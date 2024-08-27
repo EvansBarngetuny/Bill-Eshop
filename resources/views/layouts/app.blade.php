@@ -13,7 +13,7 @@
 
 
     <link rel="shortcut icon" href="{{ asset('img/b.png') }}" />
-    <title>Beyond | Science shop</title>
+    <title>Bill | E-Shop</title>
 
     <script src="{{ asset('js/utilities.js') }}" defer></script>
     {{ $js ?? '' }}
@@ -31,8 +31,7 @@
             @each('components.temp', range(1, 4), 'link')
         </div>
         <div class="site-info">
-            <a class="logo-link d-b" href="#"><img class="d-b" src="{{ asset('img/logo.jpg') }}"
-                    alt="logo"></a>
+            <a class="logo-link d-b" href="#"><img class="d-b" src="{{ asset('img/bb.jpeg') }}" alt="logo"></a>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Kunal Saini !</p>
         </div>
     </footer>

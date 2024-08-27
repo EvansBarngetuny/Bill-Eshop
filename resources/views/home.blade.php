@@ -9,8 +9,8 @@
 
     <section class="hero">
         <div class="hero-inner">
-            <h1 class="m-0">Science Shop</h1>
-            <h2>start shopping for your next science project</h2>
+            <h1 class="m-0">Bill E-Shop</h1>
+            <h2>start shopping for your favourite products here</h2>
             <a class="d-b" href="{{ route('shop') }}">Shop Now</a>
         </div>
     </section>
