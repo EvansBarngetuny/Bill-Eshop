@@ -3,7 +3,7 @@
     <ul class="links">
         <li><a href="#">Pages</a></li>
         <li><a href="#">Our Team</a></li>
-        <li><a href="#">Feuchers</a></li>
+        <li><a href="#">Contact Us</a></li>
         <li><a href="#">Pricing</a></li>
         <li><a href="#">About Us</a></li>
     </ul>

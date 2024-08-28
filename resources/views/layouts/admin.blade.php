@@ -14,7 +14,7 @@
     {{ $style }}
 
     <link rel="shortcut icon" href="{{ asset('img/b.png') }}" />
-    <title>Jill</title>
+    <title>Bill E-Shop</title>
 
     <!-- scripts -->
     <script src="{{ asset('js/admin/utilities.js') }}" defer></script>
@@ -31,6 +31,41 @@
         background-color: #121212;
         color: #ffffff;
     }
+
+    .nav_admin {
+        position: relative;
+    }
+
+    .dropdown-toggle {
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        min-width: 150px;
+        border-radius: 5px;
+    }
+
+    .dropdown-menu .dropdown-item {
+        padding: 10px;
+        color: #333;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #f1f1f1;
+    }
+
+    .nav_admin:hover .dropdown-menu {
+        display: block;
+    }
     </style>
 </head>
 
@@ -40,8 +75,16 @@
         <span class="ham material-icons">menu</span>
         <a id="nav_logo" class="d-b" href="#"><img class="fit_img" src="{{ asset('img/b.png') }}" alt="logo"></a>
         <!--<button id="theme-toggle">Toggle Dark Mode</button> -->
-        <div class="nav_admin">
-            <img class="fit_img admin_img" src="{{ asset('storage/avatar/admin.jpg'); }}" alt="admin_img">
+        <div class="nav_admin dropdown">
+            <img class="fit_img admin_img dropdown-toggle" src="{{ asset('img/profile.jpg') }}" alt="admin_img"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <h6 class="dropdown-item">{{ auth()->user()->full_name }}</h6>
+                <form action="{{ route('logout') }}" method="post" class="dropdown-item">
+                    @csrf
+                    <input class="logout" type="submit" value="Logout">
+                </form>
+            </div>
         </div>
     </nav>
 
@@ -52,14 +95,15 @@
         </div>
         <div id="aside_admin">
             <div class="card flex_align">
-                <img class="fit_img admin_img" src="{{ asset('storage/avatar/admin.jpg'); }}" alt="admin_img">
-                <div>
+                <img class="fit_img admin_img d-b" src="{{ asset('img/b.png') }}" alt="admin_img">
+                <!--<div>
                     <h6>{{ auth()->user()->full_name }}</h6>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <input class="logout" type="submit" value="Logout">
                     </form>
-                </div>
+                </div> -->
+                <h1 style="color:#ffffff">Admin Dashboard</h1>
             </div>
         </div>
         <div class="aside_main">
@@ -155,6 +199,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         console.log("Theme changed to:", theme);
         localStorage.setItem('theme', theme);
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggle = document.getElementById('dropdownMenuButton');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownToggle.addEventListener('click', function() {
+        dropdownMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.remove('show');
+        }
     });
 });
 </script>

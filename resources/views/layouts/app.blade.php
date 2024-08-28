@@ -17,6 +17,18 @@
 
     <script src="{{ asset('js/utilities.js') }}" defer></script>
     {{ $js ?? '' }}
+    <style>
+    .flex-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        /* Adjust the gap between elements as needed */
+    }
+
+    .site-info p {
+        margin: 0;
+    }
+    </style>
 </head>
 
 <body class="m-0">
@@ -30,9 +42,11 @@
         <div class="footer-links _container flex_align">
             @each('components.temp', range(1, 4), 'link')
         </div>
-        <div class="site-info">
-            <a class="logo-link d-b" href="#"><img class="d-b" src="{{ asset('img/bb.jpeg') }}" alt="logo"></a>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Kunal Saini !</p>
+        <div class="ham site-info flex-row">
+            <!--<a class="logo-link d-b" href="#"><img class="d-b" src="{{ asset('img/b.png') }}" alt="logo"></a> -->
+            <a id="nav_logo" class="d-b" href="#"><img class="fit_img" style="width: 40px; height:auto"
+                    src="{{ asset('img/b.png') }}" alt="logo"></a>
+            <p>&copy - {{now()->year}}</p>
         </div>
     </footer>
 </body>

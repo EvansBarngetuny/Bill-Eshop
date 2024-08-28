@@ -31,29 +31,29 @@
                 </select>
             </fieldset><br>
             <div class="form-group">
-                <label for="title">Product Name: </label>
+                <label for="title">Product Name </label>
                 <input type="text" name="title" value="{{ $product->title }}" required class="form-control"
                     placeholder="Product name">
             </div>
             <div class="form-group">
-                <label for="title">Choose Image: </label> <br>
+                <label for="title">Choose Image </label> <br>
                 <input id="up_img" type="file" name="image" class="form-control"><br>
                 {{-- preview image --}}
                 <img id="preview_img" style="max-width: 100px" src="{{ asset('storage/' . $product->image) }}"
                     alt="{{ $product->title }}">
             </div>
             <div class="form-group">
-                <label for="title">Product info: </label>
+                <label for="title">Product info </label>
                 <input type="text" name="about" value="{{ $product->about }}" required class="form-control"
                     placeholder="Product info">
             </div>
 
             <div class="form-group">
-                <label for="title">Product price:</label>
+                <label for="title">Product price</label>
                 <input type="number" name="price" min="0" value="{{ $product->price }}" required class="form-control">
             </div>
             <div class="form-group">
-                <label for="title">Product stock quantity: </label>
+                <label for="title">Product stock quantity </label>
                 <input type="number" min="0" name="stock_quantity" value="{{ $product->stock_quantity }}"
                     class="form-control" required>
             </div>

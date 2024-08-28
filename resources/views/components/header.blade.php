@@ -1,7 +1,9 @@
 <header>
     <nav class="flex_align _container">
-        <a class="logo-link d-b" href="{{ route('home') }}"><img class="d-b" src="{{ asset('img/bb.png') }}"
-                alt="logo"></a>
+        <!-- <a class="logo-link d-b" href="{{ route('home') }}"><img class="fit_img" src="{{ asset('img/b.png') }}"
+                alt="logo"></a>-->
+        <a id="nav_logo" class="d-b" href="{{ route('home')}}"><img class="fit_img" style="width: 40px; height:auto"
+                src="{{ asset('img/b.png') }}" alt="logo"></a>
         <form class="ml-auto one-form" action="{{ route('shop') }}" method="GET">
             <input type="search" name="search" placeholder="Search for products..." value="{{ $search ?? '' }}">
             <button type="submit">

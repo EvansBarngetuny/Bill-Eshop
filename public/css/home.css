@@ -4,7 +4,7 @@
   height: 70vh;
   text-align: center;
   color: white;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/hero.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/home.jpeg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -19,13 +19,16 @@
 .hero a {
   width: 100px;
   font-size: 1.5em;
-  background-color: #770014;
+  background-color: #004b77;
   color: #ffffff;
   font-weight: bolder;
   padding: .5em 1em;
   margin: 0 auto;
 }
-
+.hero a:hover{
+  background-color: blue;
+  color: #ffffff;
+}
 .home-grid {
   display: grid;
   gap: 50px;
